@@ -25,6 +25,18 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+      {
         test: /\.s[c]ss$/i,
         use: [
           'style-loader',
@@ -37,7 +49,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Marvel.com"
+      title: 'Marvel.com',
+      template: './src/index.html',
     })
   ]
 };
