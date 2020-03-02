@@ -52,6 +52,13 @@ header {
       text-decoration: none;
     }
   }
+
+  &__main-logo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .header__bottom {
