@@ -31,7 +31,7 @@ header {
     border-left: 1px solid #393939;
     border-right: 1px solid #393939;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 840px) {
       display: none;
     }
 
@@ -68,7 +68,7 @@ header {
     border-right: 1px solid #393939;
     padding: 0 30px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 840px) {
       display: none;
     }
   }
@@ -79,8 +79,8 @@ header {
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 768px) {
-      display: none;
+    @media screen and (max-width: 840px) {
+      border-right: none;
     }
   }
 }
