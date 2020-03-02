@@ -72,6 +72,17 @@ header {
       display: none;
     }
   }
+
+  &__search {
+    border-right: 1px solid #393939;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
 }
 
 .header__bottom {
@@ -116,4 +127,11 @@ header {
     display: flex;
     flex-direction: column;
   }
+}
+
+.search-icon-link {
+  fill: none;
+  stroke-width: 2px;
+  stroke: $white;
+  stroke-linecap: square;
 }
