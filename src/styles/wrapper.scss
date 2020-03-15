@@ -5,20 +5,39 @@
   &__main {
     background-color: #151515;
     display: flex;
+    position: relative;
     height: 100%;
     width: 100%;
     clip-path: polygon(0 0, 0 100%, 100% 92%, 100% 0);
+
+    &--middle {
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        border-bottom: 560px solid #151515;
+        border-right: 160px solid transparent;
+        left: 44.90%;
+      }
+    }
 
     @media screen and (min-width: 768px) {
       height: 560px;
     }
 
-    &-inner {
-      flex: 0 0 50%;
+    &__partial {
+      flex: 0 0 45%;
     }
-
-    &-media {
+    
+    &__full {
+      background-color: blue;
       flex: 1;
+    }
+    
+    &-img {
+      height: 100%;
+      width: 100%;
+      background-position: top;
     }
   }
   
