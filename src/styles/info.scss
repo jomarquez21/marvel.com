@@ -1,0 +1,75 @@
+.info {
+  position: relative;
+  color: white;
+  position: relative;
+  padding: 60px 30px 80px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+    max-width: 500px;
+    width: 40%;
+  }
+
+  &__img {
+    margin: 0 0 20px;
+  }
+
+  &__logo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__new {
+    font-family: 'roboto condensed bold';
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 19px;
+    position: relative;
+    margin: 35px 0;
+
+    &::before, &::after {
+      background-color: #c6a972;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      transform: rotate(-45deg) skewX(45deg);
+      width: 30px;
+    }
+
+    &::before {
+      left: 53px;
+      top: -8px;
+      transform-origin: left bottom;
+    }
+
+    &::after {
+      left: -6px;
+      top: calc(100% + 3px);
+      transform-origin: right top;
+    }
+  }
+
+  &__title {
+    font-size: 26px;
+    font-family: 'roboto condensed';
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+      font-size: 40px;
+    }
+  }
+
+  &__description {
+    letter-spacing: 0.5px;
+    margin: 0 0 25px;
+  }
+}

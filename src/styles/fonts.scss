@@ -9,6 +9,14 @@
 }
 
 @font-face {
+  font-family: 'roboto condensed';
+  src: url('./../fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+      url('./../fonts/RobotoCondensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'roboto bold';
   src: url('./../fonts/roboto-bold-webfont.woff2') format('woff2'),
        url('./../fonts/roboto-bold-webfont.woff') format('woff');
