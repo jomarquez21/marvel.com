@@ -1,0 +1,127 @@
+.btn-marvel {
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  margin: 0 15px 15px 0;
+
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+    width: calc(100% - 15px);
+    height: 15px;
+  }
+
+  &::after {
+    border-bottom: 1px solid $white;
+    border-left: 1px solid $white;
+  }
+  
+  &::before {
+    margin-left: 15px;
+    border-top: 1px solid $white;
+    border-right: 1px solid $white;
+  }
+
+  &__inner {
+    text-align: center;
+    border-left: 1px solid $white;
+    border-right: 1px solid $white;
+    color: $white;
+    font-family: 'roboto bold';
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0 35px;
+
+    &::after, &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      background-size: 16px 24px;
+      background-image: repeating-linear-gradient(-45deg, $white, $white 1px,transparent 0,transparent 16px);
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0 0 16px 16px;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0 0 16px 16px;
+    }
+  }
+
+  &--light {
+    &:hover {
+      &::before,
+      &::after {
+        opacity: 0.4;
+      }
+      
+      .btn-marvel {
+        &__inner {
+          border-color: hsla(0, 0%, 100%, 0.4);
+          
+          &::before,
+          &::after {
+            opacity: 0.4;
+          }
+        }
+      }
+    }
+  }
+
+  &--fill {
+    &::before,
+    &::after {
+      background-color: $marvel-red;
+      border-color: $marvel-red;
+    }
+    
+    .btn-marvel {
+      &__inner {
+        background-color: $marvel-red;
+        border-color: $marvel-red;
+        
+        &::before {
+          border-color: $marvel-red transparent;
+        }
+        &::after {
+          border-color: transparent $marvel-red;
+        }
+      }
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        background-color: $marvel-red-opacity;
+        border-color: $marvel-red-opacity;
+      }
+      
+      .btn-marvel {
+        &__inner {
+          background-color: $marvel-red-opacity;
+          border-color: $marvel-red-opacity;
+          
+          &::before {
+            border-color: $marvel-red-opacity transparent;
+          }
+          &::after {
+            border-color: transparent $marvel-red-opacity;
+          }
+        }
+      }
+    }
+  }
+}

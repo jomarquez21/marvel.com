@@ -1,3 +1,6 @@
+$marvel-red: #e62429;
+$marvel-red-opacity: #9f0013;
+
 @import '~bootstrap';
 
 @import './fonts.scss';
@@ -5,8 +8,17 @@
 @import './card-info.scss';
 @import './wrapper.scss';
 @import './info.scss';
+@import './btn.scss';
 
 body {
   overflow-y: scroll;
   font-family: 'roboto';
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
