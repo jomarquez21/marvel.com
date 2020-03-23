@@ -13,17 +13,17 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
+  resolve: {
+    extensions: ['.js'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.js?$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+        },
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -53,6 +53,7 @@ module.exports = {
   ]),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      inject: true,
       title: 'Marvel.com',
       template: './src/index.html',
     })
