@@ -6,6 +6,7 @@ import {LinkMarvel} from './components/LinkMarvel';
 import {Card} from './components/cards/Card';
 import {CardVertical} from './components/cards/CardVertical';
 import {CardCharacter} from './components/cards/CardCharacter';
+import {ContentGrid} from './components/ContentGrid';
 import './../styles/style.scss';
 
 const init = async () => {
@@ -65,12 +66,21 @@ const init = async () => {
     async () => carouselTemp,
   );
 
+  const contentGrid = await ContentGrid(
+    `<h3 class="title-marvel">Marvel PODCASTS</h3>`,
+    `${await Card()} ${await Card()} ${await Card()} ${await Card()}`
+  );
+
   content.innerHTML = `
     ${contentMain1}
 
     ${contentMain2}
 
     ${contentMain3}
+
+    <section>
+      ${contentGrid}
+    </section>
   `;
 }
 

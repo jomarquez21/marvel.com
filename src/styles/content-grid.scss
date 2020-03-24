@@ -1,0 +1,25 @@
+.content-grid {
+  margin: 0 auto;
+  max-width: 1240px;
+  min-height: 80px;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+
+  &__body {
+    display: grid;
+    transition: all 1s ease-out;
+    overflow: hidden;
+    grid-column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(31.66%, 1fr));
+
+    @media screen and (min-width: 560px) {
+      grid-template-columns: repeat(auto-fill, minmax(31.66%, 1fr));
+    }
+    
+    @media screen and (min-width: 992px) {
+      grid-template-columns: repeat(auto-fill, minmax(23.75%, 1fr));
+    }
+  }
+}

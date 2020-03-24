@@ -11,7 +11,7 @@ export const Info = async ({urlImage, newInfo, title, description}, children) =>
         ` : ''
       }
 
-      ${newInfo ? `<div class="info__new">${newInfo}</div>` : ''}
+      ${newInfo ? `<div class="info__new"><div class="title-marvel">${newInfo}</div></div>` : ''}
 
       ${title ? `<p class="info__title">${title}</p>` : ''}
 
