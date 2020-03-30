@@ -23,17 +23,70 @@ const init = async () => {
     ${headerBottom}
   `;
 
-  const carouselTemp = `
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-      <div style="width: 270px;">
+  const carouselTemp1 = `
+    <div style="display: flex; justify-content: space-between; overflow: hidden;">
+      <div style="width: 270px; margin-right: 10px">
         ${await Card()}
       </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card()}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card()}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card()}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card()}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card()}
+      </div>
+    </div>
+  `;
 
-      <div style="width: 174px;">
+  const carouselTemp2 = `
+    <div style="display: flex; justify-content: space-between; overflow: hidden;">
+      <div style="width: 174px; margin-right: 10px">
         ${await CardVertical()}
       </div>
+      <div style="width: 174px; margin-right: 10px">
+        ${await CardVertical()}
+      </div>
+      <div style="width: 174px; margin-right: 10px">
+        ${await CardVertical()}
+      </div>
+      <div style="width: 174px; margin-right: 10px">
+        ${await CardVertical()}
+      </div>
+      <div style="width: 174px; margin-right: 10px">
+        ${await CardVertical()}
+      </div>
+      <div style="width: 174px; margin-right: 10px">
+        ${await CardVertical()}
+      </div>
+    </div>
+  `;
 
-      <div style="width: 192px;">
+  const carouselTemp3 = `
+    <div style="display: flex; justify-content: space-between; overflow: hidden;">
+      <div style="width: 192px; margin-right: 10px">
+        ${await CardCharacter()}
+      </div>
+      <div style="width: 192px; margin-right: 10px">
+        ${await CardCharacter()}
+      </div>
+      <div style="width: 192px; margin-right: 10px">
+        ${await CardCharacter()}
+      </div>
+      <div style="width: 192px; margin-right: 10px">
+        ${await CardCharacter()}
+      </div>
+      <div style="width: 192px; margin-right: 10px">
+        ${await CardCharacter()}
+      </div>
+      <div style="width: 192px; margin-right: 10px">
         ${await CardCharacter()}
       </div>
     </div>
@@ -46,7 +99,7 @@ const init = async () => {
       {urlImage: './assets/marvelunlimited_log.png', description: 'Read these plus 27,000+ digital comics for $9.99 a month!'},
       LinkMarvel.bind(null, 'LEARN MORE', 'btn-marvel--fill'),
     ),
-    async () => carouselTemp,
+    async () => carouselTemp1,
   );
 
   const contentMain2 = await ContentMain(
@@ -56,7 +109,7 @@ const init = async () => {
       {urlImage: './assets/marvelunlimited_log.png', newInfo: 'Available now', title: 'New in marvel unlimited', description: 'Read these plus 27,000+ digital comics for $9.99 a month!'},
       async () => `${await LinkMarvel('Get Marvel Unlimited', 'btn-marvel--light')}`,
     ),
-    async () => carouselTemp,
+    async () => carouselTemp2,
   );
 
   const contentMain3 = await ContentMain(
@@ -66,7 +119,17 @@ const init = async () => {
       {urlImage: './assets/disneyplus.png', description: 'Start streaming now.'},
       async () => `${await LinkMarvel('LEARN MORE', 'btn-marvel--light')} ${await LinkMarvel('SIGN UP', 'btn-marvel--light')}`,
     ),
-    async () => carouselTemp,
+    async () => carouselTemp3,
+  );
+
+  const contentMain4 = await ContentMain(
+    {imageUrl: './assets/new_com.jpg', className: 'wrapper__main--middle', imageClassName: 'wrapper__main-img--middle-right'},
+    Info.bind(
+      null,
+      {newInfo: 'ON SALE 3/25', title: 'NEW COMICS THIS WEEK', description: 'Check out the newest Marvel comics coming out this week!'},
+      async () => `${await LinkMarvel('SHOP DIGITAL COMICS', 'btn-marvel--light')} ${await LinkMarvel('PRINT SUBSCRIPTIONS', 'btn-marvel--light')}`,
+    ),
+    async () => carouselTemp1,
   );
 
   const contentGrid = await ContentGrid(
@@ -97,14 +160,16 @@ const init = async () => {
     ${contentMain2}
 
     ${contentMain3}
-
+    
     <section>
       ${contentGrid}
     </section>
-
+    
     <section>
       ${newsContent}
     </section>
+
+    ${contentMain4}
   `;
 }
 
