@@ -70,7 +70,7 @@
       
       .btn-marvel {
         &__inner {
-          border-color: hsla(0, 0%, 100%, 0.4);
+          border-color: rgba(255, 255, 255, 0.4);
           
           &::before,
           &::after {
@@ -120,6 +120,38 @@
           &::after {
             border-color: transparent $marvel-red-opacity;
           }
+        }
+      }
+    }
+  }
+
+  &--dark {
+    &::before,
+    &::after {
+      border-color: $black;
+    }
+    
+    .btn-marvel {
+      &__inner {
+        border-color: $black;
+        color: $black;
+        
+        &::before {
+          background-image: repeating-linear-gradient(-45deg, #151515, #151515 1px, transparent 0, transparent 16px);
+        }
+
+        &::after {
+          background-image: repeating-linear-gradient(-45deg, #151515, #151515 1px, transparent 0, transparent 16px);
+        }
+      }
+    }
+
+    &:hover {
+      @extend .btn-marvel--light:hover;
+
+      .btn-marvel {
+        &__inner {
+          border-color: rgba(32,32,32, 0.4);
         }
       }
     }

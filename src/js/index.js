@@ -7,6 +7,9 @@ import {Card} from './components/cards/Card';
 import {CardVertical} from './components/cards/CardVertical';
 import {CardCharacter} from './components/cards/CardCharacter';
 import {ContentGrid} from './components/ContentGrid';
+import {NewsContentContainer} from './components/newsContents/NewsContentContainer';
+import {NewsContentBody} from './components/newsContents/NewsContentBody';
+import {NewsContentSidebar} from './components/newsContents/NewsContentSidebar';
 import './../styles/style.scss';
 
 const init = async () => {
@@ -51,7 +54,7 @@ const init = async () => {
     Info.bind(
       null,
       {urlImage: './assets/marvelunlimited_log.png', newInfo: 'Available now', title: 'New in marvel unlimited', description: 'Read these plus 27,000+ digital comics for $9.99 a month!'},
-      async () => `${await LinkMarvel('Get Marvel Unlimited')}`,
+      async () => `${await LinkMarvel('Get Marvel Unlimited', 'btn-marvel--light')}`,
     ),
     async () => carouselTemp,
   );
@@ -61,7 +64,7 @@ const init = async () => {
     Info.bind(
       null,
       {urlImage: './assets/disneyplus.png', description: 'Start streaming now.'},
-      async () => `${await LinkMarvel('LEARN MORE')} ${await LinkMarvel('SIGN UP')}`,
+      async () => `${await LinkMarvel('LEARN MORE', 'btn-marvel--light')} ${await LinkMarvel('SIGN UP', 'btn-marvel--light')}`,
     ),
     async () => carouselTemp,
   );
@@ -69,6 +72,23 @@ const init = async () => {
   const contentGrid = await ContentGrid(
     `<h3 class="title-marvel">Marvel PODCASTS</h3>`,
     `${await Card()} ${await Card()} ${await Card()} ${await Card()}`
+  );
+
+  const newsContentBody = await NewsContentBody(
+    `<h3 class="title-marvel">The lastes</h3>`,
+    [1,2,3,4,5,6,7,8]
+  );
+
+  const newsContentSideBar = await NewsContentSidebar(
+    '',
+    [1,2,3,4,5,6,7,8]
+  );
+
+  const newsContent = await NewsContentContainer(
+    `
+      ${newsContentBody}
+      ${newsContentSideBar}
+    `
   );
 
   content.innerHTML = `
@@ -81,7 +101,13 @@ const init = async () => {
     <section>
       ${contentGrid}
     </section>
+
+    <section>
+      ${newsContent}
+    </section>
   `;
 }
+
+// #c6a972
 
 init();
