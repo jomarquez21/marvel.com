@@ -11,6 +11,7 @@ import {Banner} from './components/Banner';
 import {NewsContentContainer} from './components/newsContents/NewsContentContainer';
 import {NewsContentBody} from './components/newsContents/NewsContentBody';
 import {NewsContentSidebar} from './components/newsContents/NewsContentSidebar';
+import {Footer} from './components/Footer';
 import './../styles/style.scss';
 
 const init = async () => {
@@ -164,6 +165,8 @@ const init = async () => {
     `
   );
 
+  const footer = await Footer();
+
   content.innerHTML = `
     ${contentMain1}
 
@@ -181,9 +184,7 @@ const init = async () => {
 
     ${contentMain4}
 
-    <section>
-      ${contentMain5}
-    </section>
+    ${footer}
   `;
 }
 

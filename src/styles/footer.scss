@@ -1,0 +1,66 @@
+.footer {
+  background-color: #151515;
+  color: $white;
+  padding-top: 50px;
+  padding-bottom: 38px;
+
+  &__container {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #393939;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+  }
+
+  &__marvel {
+    width: 35px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 600px) {
+      margin: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 80px;
+    }
+  }
+
+  &__logo {
+    flex: 0 0 100%;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 600px) {
+      flex: 1;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    flex: 1;
+
+    &-item {
+      margin-bottom: 20px;
+      
+      @media screen and (min-width: 768px) {
+        margin-bottom: 15px;
+      }
+
+      a {
+        color: $white;
+        letter-spacing: 1px;
+        font-family: 'roboto';
+        font-weight: 700;
+        font-size: 13px;
+      }
+    }
+  }
+}
