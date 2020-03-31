@@ -7,6 +7,7 @@ import {Card} from './components/cards/Card';
 import {CardVertical} from './components/cards/CardVertical';
 import {CardCharacter} from './components/cards/CardCharacter';
 import {ContentGrid} from './components/ContentGrid';
+import {Banner} from './components/Banner';
 import {NewsContentContainer} from './components/newsContents/NewsContentContainer';
 import {NewsContentBody} from './components/newsContents/NewsContentBody';
 import {NewsContentSidebar} from './components/newsContents/NewsContentSidebar';
@@ -132,6 +133,15 @@ const init = async () => {
     async () => carouselTemp1,
   );
 
+  const contentMain5 = await Banner(
+    {imageUrl: './assets/spider.jpg', className: '', imageClassName: 'wrapper__main-img--middle-left'},
+    Info.bind(
+      null,
+      {newInfo: 'ON SALE 3/25', title: 'NEW COMICS THIS WEEK', description: 'Check out the newest Marvel comics coming out this week!'},
+      async () => `${await LinkMarvel('SHOP DIGITAL COMICS', 'btn-marvel--light')} ${await LinkMarvel('PRINT SUBSCRIPTIONS', 'btn-marvel--light')}`,
+    ),
+  );
+
   const contentGrid = await ContentGrid(
     `<h3 class="title-marvel">Marvel PODCASTS</h3>`,
     `${await Card()} ${await Card()} ${await Card()} ${await Card()}`
@@ -170,6 +180,10 @@ const init = async () => {
     </section>
 
     ${contentMain4}
+
+    <section>
+      ${contentMain5}
+    </section>
   `;
 }
 

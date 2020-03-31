@@ -93,6 +93,11 @@
         background-color: $marvel-red;
         border-color: $marvel-red;
         
+        &::before,
+        &::after {
+          background-image: repeating-linear-gradient(-45deg, $marvel-red, $marvel-red 1px,transparent 0,transparent 16px);
+        }
+
         &::before {
           border-color: $marvel-red transparent;
         }
