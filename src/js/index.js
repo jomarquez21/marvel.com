@@ -98,49 +98,99 @@ const init = async () => {
     {imageUrl: './assets/avengerscampus_mas_dsk.jpg'},
     Info.bind(
       null,
-      {urlImage: './assets/marvelunlimited_log.png', description: 'Read these plus 27,000+ digital comics for $9.99 a month!'},
-      LinkMarvel.bind(null, 'LEARN MORE', 'btn-marvel--fill'),
+      {
+        urlImage: './assets/marvelunlimited_log.png',
+        description:
+          'Read these plus 27,000+ digital comics for $9.99 a month!',
+      },
+      LinkMarvel.bind(null, 'LEARN MORE', 'btn-marvel--fill')
     ),
-    async () => carouselTemp1,
+    async () => carouselTemp1
   );
 
   const contentMain2 = await ContentMain(
-    {imageUrl: './assets/sets.jpg', className: 'wrapper__main--middle', imageClassName: 'wrapper__main-img--middle-right'},
+    {
+      imageUrl: './assets/sets.jpg',
+      className: 'wrapper__main--middle',
+      imageClassName: 'wrapper__main-img--middle-right',
+    },
     Info.bind(
       null,
-      {urlImage: './assets/marvelunlimited_log.png', newInfo: 'Available now', title: 'New in marvel unlimited', description: 'Read these plus 27,000+ digital comics for $9.99 a month!'},
-      async () => `${await LinkMarvel('Get Marvel Unlimited', 'btn-marvel--light')}`,
+      {
+        urlImage: './assets/marvelunlimited_log.png',
+        newInfo: 'Available now',
+        title: 'New in marvel unlimited',
+        description:
+          'Read these plus 27,000+ digital comics for $9.99 a month!',
+      },
+      async () =>
+        `${await LinkMarvel('Get Marvel Unlimited', 'btn-marvel--light')}`
     ),
-    async () => carouselTemp2,
+    async () => carouselTemp2
   );
 
   const contentMain3 = await ContentMain(
-    {imageUrl: './assets/disneyplusall.png', className: 'wrapper__main--middle', imageClassName: 'wrapper__main-img--middle-right'},
+    {
+      imageUrl: './assets/disneyplusall.png',
+      className: 'wrapper__main--middle',
+      imageClassName: 'wrapper__main-img--middle-right',
+    },
     Info.bind(
       null,
-      {urlImage: './assets/disneyplus.png', description: 'Start streaming now.'},
-      async () => `${await LinkMarvel('LEARN MORE', 'btn-marvel--light')} ${await LinkMarvel('SIGN UP', 'btn-marvel--light')}`,
+      {
+        urlImage: './assets/disneyplus.png',
+        description: 'Start streaming now.',
+      },
+      async () =>
+        `${await LinkMarvel(
+          'LEARN MORE',
+          'btn-marvel--light'
+        )} ${await LinkMarvel('SIGN UP', 'btn-marvel--light')}`
     ),
-    async () => carouselTemp3,
+    async () => carouselTemp3
   );
 
   const contentMain4 = await ContentMain(
-    {imageUrl: './assets/new_com.jpg', className: 'wrapper__main--middle', imageClassName: 'wrapper__main-img--middle-right'},
+    {
+      imageUrl: './assets/new_com.jpg',
+      className: 'wrapper__main--middle',
+      imageClassName: 'wrapper__main-img--middle-right',
+    },
     Info.bind(
       null,
-      {newInfo: 'ON SALE 3/25', title: 'NEW COMICS THIS WEEK', description: 'Check out the newest Marvel comics coming out this week!'},
-      async () => `${await LinkMarvel('SHOP DIGITAL COMICS', 'btn-marvel--light')} ${await LinkMarvel('PRINT SUBSCRIPTIONS', 'btn-marvel--light')}`,
+      {
+        newInfo: 'ON SALE 3/25',
+        title: 'NEW COMICS THIS WEEK',
+        description: 'Check out the newest Marvel comics coming out this week!',
+      },
+      async () =>
+        `${await LinkMarvel(
+          'SHOP DIGITAL COMICS',
+          'btn-marvel--light'
+        )} ${await LinkMarvel('PRINT SUBSCRIPTIONS', 'btn-marvel--light')}`
     ),
-    async () => carouselTemp1,
+    async () => carouselTemp1
   );
 
   const contentMain5 = await Banner(
-    {imageUrl: './assets/spider.jpg', className: '', imageClassName: 'wrapper__main-img--middle-left'},
+    {
+      imageUrl: './assets/spider.jpg',
+      className: '',
+      imageClassName: 'wrapper__main-img--middle-left',
+    },
     Info.bind(
       null,
-      {newInfo: 'ON SALE 3/25', title: 'NEW COMICS THIS WEEK', description: 'Check out the newest Marvel comics coming out this week!'},
-      async () => `${await LinkMarvel('SHOP DIGITAL COMICS', 'btn-marvel--light')} ${await LinkMarvel('PRINT SUBSCRIPTIONS', 'btn-marvel--light')}`,
-    ),
+      {
+        newInfo: 'ON SALE 3/25',
+        title: 'NEW COMICS THIS WEEK',
+        description: 'Check out the newest Marvel comics coming out this week!',
+      },
+      async () =>
+        `${await LinkMarvel(
+          'SHOP DIGITAL COMICS',
+          'btn-marvel--light'
+        )} ${await LinkMarvel('PRINT SUBSCRIPTIONS', 'btn-marvel--light')}`
+    )
   );
 
   const contentGrid = await ContentGrid(
@@ -150,13 +200,19 @@ const init = async () => {
 
   const newsContentBody = await NewsContentBody(
     `<h3 class="title-marvel">The lastes</h3>`,
-    [1,2,3,4,5,6,7,8]
+    [1, 2, 3, 4, 5, 6, 7, 8]
   );
 
-  const newsContentSideBar = await NewsContentSidebar(
-    '',
-    [1,2,3,4,5,6,7,8]
-  );
+  const newsContentSideBar = await NewsContentSidebar('', [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+  ]);
 
   const newsContent = await NewsContentContainer(
     `
@@ -186,7 +242,7 @@ const init = async () => {
 
     ${footer}
   `;
-}
+};
 
 // #c6a972
 
