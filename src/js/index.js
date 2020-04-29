@@ -13,6 +13,7 @@ import {NewsContentBody} from './components/newsContents/NewsContentBody';
 import {NewsContentSidebar} from './components/newsContents/NewsContentSidebar';
 import {Footer} from './components/Footer';
 import './../styles/style.scss';
+import {Promo} from './components/Promo';
 
 const init = async () => {
   const header = null || document.getElementById('header');
@@ -277,7 +278,7 @@ const init = async () => {
     },
   ]);
 
-  const daaaa = await NewsContentContainer(
+  const newcontent = await NewsContentContainer(
     `
       ${newsContentBody}
       ${newsContentSideBar}
@@ -286,27 +287,31 @@ const init = async () => {
 
   const footer = await Footer();
 
+  const promo = await Promo();
+
   content.innerHTML = `
     ${contentMain1}
 
     ${contentMain2}
 
     ${contentMain3}
-    
+
+    ${contentMain4}
+
     <section>
       ${contentGrid}
     </section>
     
     <section>
-      ${daaaa}
+      ${newcontent}
     </section>
-
-    ${contentMain4}
-
+    
+    <section>
+      ${promo}
+    </section>
+    
     ${footer}
   `;
 };
-
-// #c6a972
 
 init();
