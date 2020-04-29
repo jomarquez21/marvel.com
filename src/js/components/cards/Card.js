@@ -1,6 +1,8 @@
-export const Card = async () => {
+import classNames from 'classnames';
+
+export const Card = async (className, img = './assets/one.jpg') => {
   return `
-    <div class="card-info">
+    <div class="card-info ${classNames(className)}">
       <a href="#" class="card-info__link">
         <div class="card-info__media">
           <div class="card-overlay">
@@ -8,7 +10,7 @@ export const Card = async () => {
               <i class="card-overlay__play-icon"></i>
             </div>
           </div>
-          <img src="./assets/one.jpg" class="card-info__img">
+          <img src="${img}" class="card-info__img">
         </div>
 
         <div class="card-info__description">
@@ -18,4 +20,4 @@ export const Card = async () => {
       </a>
     </div>
   `;
-}
+};

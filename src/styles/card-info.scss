@@ -10,7 +10,7 @@
 
   &__media {
     overflow: hidden;
-    transition: all .17s ease-in-out;
+    transition: all 0.17s ease-in-out;
     position: relative;
   }
 
@@ -40,7 +40,7 @@
     font-size: 14px;
     font-family: 'roboto condensed bold';
     text-transform: uppercase;
-    color: #e62429;
+    color: $marvel-red;
 
     &--normal {
       color: #999;
@@ -56,7 +56,7 @@
     margin: 0;
 
     &:hover {
-      color: #e62429;
+      color: $marvel-red;
     }
   }
 
@@ -68,7 +68,7 @@
         }
 
         .card-info__headline {
-          color: #e62429;
+          color: $marvel-red;
         }
       }
 
@@ -83,7 +83,7 @@
     .card-info {
       &__link:hover {
         .card-info__img {
-          transform: scale3d(1.05,1.05,1);
+          transform: scale3d(1.05, 1.05, 1);
         }
 
         .card-info__description::before {
@@ -92,12 +92,12 @@
       }
 
       &__img {
-        transition: all .2s linear;
+        transition: all 0.2s linear;
       }
 
       &__description {
         background-color: #151515;
-        border-top: 4px solid #e62429;
+        border-top: 4px solid $marvel-red;
         overflow: hidden;
         position: relative;
         color: $white;
@@ -114,15 +114,15 @@
         }
 
         &::before {
-          background: #e62429;
+          background: $marvel-red;
           bottom: 100%;
           content: '';
           height: 100%;
           left: 0;
           position: absolute;
-          transition-timing-function: cubic-bezier(.75,0,.125,1);
-          transition: transform .3s;
-          transition: transform .3s;
+          transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+          transition: transform 0.3s;
+          transition: transform 0.3s;
           width: 100%;
         }
 
@@ -158,6 +158,47 @@
       }
     }
   }
+
+  &--horizontal {
+    .card-info {
+      &__link {
+        display: flex;
+      }
+
+      &__media {
+        flex: 1;
+      }
+
+      &__description {
+        padding-left: 20px;
+        flex: 0 0 66%;
+      }
+    }
+  }
+
+  &__title {
+    font-family: 'roboto bold';
+    color: #151515;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 8px 0 0;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+  }
+
+  &__footer {
+    &-overlay-time {
+      font-family: 'roboto condensed';
+      color: #999;
+      display: none;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
 }
 
 .card-overlay {
@@ -174,7 +215,7 @@
 
   &:hover {
     .card-overlay__play-box {
-      background-color: $white;  
+      background-color: $white;
     }
   }
 
@@ -188,8 +229,115 @@
   }
 
   &__play-icon {
-    border-left: 9px solid #e62429;
+    border-left: 9px solid $marvel-red;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
+  }
+}
+
+.card-news {
+  &__link {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 601px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__media {
+    position: relative;
+    flex: 0 0 100%;
+
+    @media screen and (min-width: 601px) {
+      flex: 1;
+    }
+  }
+
+  &__content {
+    flex: 0 0 100%;
+    padding: 20px 30px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: 601px) {
+      flex: 0 0 50%;
+      padding-left: 30px;
+    }
+  }
+
+  &__linked {
+    color: $marvel-red;
+  }
+
+  &__unlinked {
+    color: #999;
+  }
+
+  &__linked,
+  &__unlinked {
+    font-family: 'roboto condensed bold';
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: #151515;
+    font-weight: 700;
+    margin: 8px 0 0;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    line-height: 26px;
+    font-family: 'roboto bold';
+
+    &:hover {
+      color: $marvel-red;
+    }
+  }
+
+  &__footer {
+    margin-top: 10px;
+    line-height: 12px;
+
+    &-time {
+      color: #999;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 12px;
+      display: block;
+      font-family: 'roboto condensed bold';
+    }
+  }
+}
+
+.img {
+  &__wrapper {
+    padding-bottom: 56.25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__src {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }

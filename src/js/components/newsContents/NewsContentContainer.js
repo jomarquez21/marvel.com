@@ -1,7 +1,7 @@
-export const NewsContentContainer = async (title) => {
+export const NewsContentContainer = async (children) => {
   return `
     <div class="news-content">
-      ${title}
+      ${children}
     </div>
   `;
-}
+};

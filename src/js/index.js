@@ -200,21 +200,84 @@ const init = async () => {
 
   const newsContentBody = await NewsContentBody(
     `<h3 class="title-marvel">The lastes</h3>`,
-    [1, 2, 3, 4, 5, 6, 7, 8]
+    [
+      {
+        img: './assets/content_1.png',
+        unLinked: 'Podcats',
+        title: "7 Things That Really Happened in 'The Dark Phoenix Saga'",
+        time: '5 Hours ago',
+      },
+      {
+        img: './assets/content_2.jpg',
+        unLinked: 'Podcats',
+        title: "How Do Spider-Man's Webs Work?",
+        time: '6 Hours ago',
+      },
+      {
+        img: './assets/content_3.jpg',
+        unLinked: 'Podcats',
+        title: 'Support Your Local Independent Bookstores',
+        time: '6 Hours ago',
+      },
+      {
+        img: './assets/content_4.jpg',
+        unLinked: 'Podcats',
+        title: 'Kitty Pryde Is on a Boat',
+        time: '9 Hours ago',
+      },
+      {
+        img: './assets/content_5.jpg',
+        unLinked: 'Podcats',
+        title:
+          "Marvel Studios' Black Widow Coming to Marvel Games! | Marvel Minute",
+        time: '10 Hours ago',
+      },
+      {
+        img: './assets/content_6.jpg',
+        unLinked: 'Podcats',
+        title:
+          "Joe Quesada Live in Conversation with 'Venom' Artist Ryan Stegman",
+        time: '12 Hours ago',
+      },
+      {
+        img: './assets/content_7.jpg',
+        unLinked: 'Podcats',
+        title: 'When Green Goblin Met Carnage',
+      },
+    ]
   );
 
   const newsContentSideBar = await NewsContentSidebar('', [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
+    {
+      img: './assets/sidebar_1.jpg',
+      unLinked: 'Podcats',
+      title: 'Saluting the Real Life Heroes',
+    },
+    {
+      img: './assets/sidebar_2.jpg',
+      unLinked: 'CULTURE & LIFESTYLE',
+      title: "How Do Spider-Man's Webs Work?",
+    },
+    {
+      img: './assets/sidebar_3.png',
+      unLinked: 'CULTURE & LIFESTYLE',
+      title:
+        "Add 'Guardians of the Galaxy' Director James Gunn’s New Awesome Mix to Your Zune",
+    },
+    {
+      img: './assets/sidebar_4.jpg',
+      unLinked: 'Podcats',
+      title:
+        "Joe Quesada Live in Conversation with 'Venom' Artist Ryan Stegman",
+    },
+    {
+      img: './assets/sidebar_5.jpg',
+      unLinked: 'CULTURE & LIFESTYLE',
+      title: 'Support Your Local Independent Bookstores',
+    },
   ]);
 
-  const newsContent = await NewsContentContainer(
+  const daaaa = await NewsContentContainer(
     `
       ${newsContentBody}
       ${newsContentSideBar}
@@ -235,7 +298,7 @@ const init = async () => {
     </section>
     
     <section>
-      ${newsContent}
+      ${daaaa}
     </section>
 
     ${contentMain4}

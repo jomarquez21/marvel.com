@@ -14,11 +14,7 @@
     grid-column-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(31.66%, 1fr));
 
-    @media screen and (min-width: 560px) {
-      grid-template-columns: repeat(auto-fill, minmax(31.66%, 1fr));
-    }
-    
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 839px) {
       grid-template-columns: repeat(auto-fill, minmax(23.75%, 1fr));
     }
   }
