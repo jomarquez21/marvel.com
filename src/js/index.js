@@ -26,29 +26,6 @@ const init = async () => {
     ${headerBottom}
   `;
 
-  const carouselTemp1 = `
-    <div style="display: flex; justify-content: space-between; overflow: hidden;">
-      <div style="width: 270px; margin-right: 10px">
-        ${await Card()}
-      </div>
-      <div style="width: 270px; margin-right: 10px">
-        ${await Card()}
-      </div>
-      <div style="width: 270px; margin-right: 10px">
-        ${await Card()}
-      </div>
-      <div style="width: 270px; margin-right: 10px">
-        ${await Card()}
-      </div>
-      <div style="width: 270px; margin-right: 10px">
-        ${await Card()}
-      </div>
-      <div style="width: 270px; margin-right: 10px">
-        ${await Card()}
-      </div>
-    </div>
-  `;
-
   const carouselTemp2 = `
     <div style="display: flex; justify-content: space-between; overflow: hidden;">
       <div style="width: 174px; margin-right: 10px">
@@ -105,9 +82,62 @@ const init = async () => {
           'Read these plus 27,000+ digital comics for $9.99 a month!',
       },
       LinkMarvel.bind(null, 'LEARN MORE', 'btn-marvel--fill')
-    ),
-    async () => carouselTemp1
+    )
   );
+
+  const contentCarouselTemp1 = [
+    {
+      img: './assets/carousel_1_1.jpg',
+      title: 'Avengers: Kree/Skrull War | Event',
+    },
+    {
+      img: './assets/carousel_1_2.jpg',
+      title: 'Meet the Avengers of "Final Host"',
+      subTitleLink: 'Comics',
+    },
+    {
+      img: './assets/carousel_1_3.jpg',
+      title: 'Read These Free Comics | Marvel Universe',
+    },
+    {
+      img: './assets/carousel_1_4.jpg',
+      title: "5 Best 'Avengers vs. X-Men' Battles and the 5 We Want to See",
+      subTitleLink: 'Comics',
+    },
+    {
+      img: './assets/carousel_1_5.jpg',
+      title: 'The Story that Turned Bucky Barnes Into the Winter Soldier',
+      subTitleLink: 'Comics',
+    },
+    {
+      img: './assets/carousel_1_6.jpg',
+      title: "FREE COMICS on Marvel Unlimited | Marvel's Pull List",
+      subTitleLink: "Marvel's The Pull List",
+      addOverlay: true,
+    },
+  ];
+  const carouselTemp1 = `
+    <div style="display: flex; justify-content: space-between; overflow: hidden;">
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentCarouselTemp1[0])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentCarouselTemp1[1])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentCarouselTemp1[2])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentCarouselTemp1[3])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentCarouselTemp1[4])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentCarouselTemp1[5])}
+      </div>
+    </div>
+  `;
 
   const contentMain2 = await ContentMain(
     {
@@ -119,20 +149,60 @@ const init = async () => {
       null,
       {
         urlImage: './assets/marvelunlimited_log.png',
-        newInfo: 'Available now',
-        title: 'New in marvel unlimited',
+        // newInfo: 'Available now',
+        title: 'FREE DIGITAL Comics',
         description:
-          'Read these plus 27,000+ digital comics for $9.99 a month!',
+          'Marvel Unlimited is now offering free access to some of the most iconic Marvel comics stories.',
       },
-      async () =>
-        `${await LinkMarvel('Get Marvel Unlimited', 'btn-marvel--light')}`
+      async () => `${await LinkMarvel('Learn more', 'btn-marvel--light')}`
     ),
-    async () => carouselTemp2
+    async () => carouselTemp1
   );
 
+  const contentcarouselContainer3 = [
+    {
+      img: './assets/carousel_3_1.jpg',
+      title:
+        "From Marvel Comics to Disney+, See This Week in Marvel's Radical Recommendations",
+      subTitleLink: 'Culture & lifestyle',
+    },
+    {
+      img: './assets/carousel_3_2.jpg',
+      title:
+        "Release Dates Confirmed for 'The Falcon and The Winter Soldier' and 'WandaVision' on Disney+",
+      subTitleLink: 'TV SHOWS',
+    },
+    {
+      img: './assets/carousel_3_3.jpg',
+      title:
+        "Read All 20 Free 'Marvel's Hero Project' Comics on Marvel Unlimited",
+      subTitleLink: 'TV SHOWS',
+    },
+    {
+      img: './assets/carousel_3_4.jpg',
+      title: "Our Comics Guide to 'X-Men: The Animated Series’ S4 on Disney+",
+      subTitleLink: 'Comics',
+    },
+  ];
+  const carouselContainer3 = `
+    <div style="display: flex; justify-content: space-between; overflow: hidden;">
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card('', contentcarouselContainer3[0])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card('', contentcarouselContainer3[1])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card('', contentcarouselContainer3[2])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await Card('', contentcarouselContainer3[3])}
+      </div>
+    </div>
+  `;
   const contentMain3 = await ContentMain(
     {
-      imageUrl: './assets/disneyplusall.png',
+      imageUrl: './assets/disneyplusall.jpg',
       className: 'wrapper__main--middle',
       imageClassName: 'wrapper__main-img--middle-right',
     },
@@ -148,8 +218,64 @@ const init = async () => {
           'btn-marvel--light'
         )} ${await LinkMarvel('SIGN UP', 'btn-marvel--light')}`
     ),
-    async () => carouselTemp3
+    async () => carouselContainer3
   );
+
+  const contentcarouselContainer4 = [
+    {
+      img: './assets/excalibur.jpg',
+      title: 'Excalibu (2019) #1',
+      description: '2019',
+    },
+    {
+      img: './assets/strange.jpg',
+      title: 'Doctor Strange Annual (2019) #1',
+      description: '2019',
+    },
+    {
+      img: './assets/red_goblin.jpg',
+      title: 'Red Goblin: Red Death (2019) #1',
+      description: '2019',
+    },
+    {
+      img: './assets/fantastic_four.jpg',
+      title: 'Fantastic Four: Grand Design (2019) #1',
+      description: '2019',
+    },
+    {
+      img: './assets/silver_surfer.jpg',
+      title: 'silver Surfer: Black (2019) #1',
+      description: '2019',
+    },
+    {
+      img: './assets/dr_aphra.jpg',
+      title: 'Star wars: Doctor Aphra Annual (2019) #1',
+      description: '2019',
+    },
+  ];
+
+  const carouselTemp4 = `
+    <div style="display: flex; justify-content: space-between; overflow: hidden;">
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentcarouselContainer4[0])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentcarouselContainer4[1])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentcarouselContainer4[2])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentcarouselContainer4[3])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentcarouselContainer4[4])}
+      </div>
+      <div style="width: 270px; margin-right: 10px">
+        ${await CardVertical('', contentcarouselContainer4[5])}
+      </div>
+    </div>
+  `;
 
   const contentMain4 = await ContentMain(
     {
@@ -170,7 +296,7 @@ const init = async () => {
           'btn-marvel--light'
         )} ${await LinkMarvel('PRINT SUBSCRIPTIONS', 'btn-marvel--light')}`
     ),
-    async () => carouselTemp1
+    async () => carouselTemp4
   );
 
   const contentMain5 = await Banner(
@@ -194,9 +320,72 @@ const init = async () => {
     )
   );
 
+  const dataContentGridTop = [
+    {
+      img: './assets/content-top_1.jpg',
+      title:
+        "Kevin Smith Is Joe Quesada's Guest on Joe Q's Mornin' Warm-Up LIVE",
+      subtitle: 'Culture & lifestyle',
+    },
+    {
+      img: './assets/content-top_2.jpg',
+      title: 'Livestream: Join Josh Saleh as He Assembles Avengers Legos ',
+      subtitle: 'Culture & lifestyle',
+    },
+    {
+      img: './assets/content-top_3.jpg',
+      title: 'Livestream: Learn to Draw Cyclops with Artist Marcus To',
+      subtitle: 'Culture & lifestyle',
+    },
+    {
+      img: './assets/content-top_4.jpg',
+      title: 'Even More Backgrounds For Your Worthy Video Chats',
+      subtitle: 'Culture & lifestyle',
+    },
+  ];
+  const contentGridTop = await ContentGrid(
+    `<h3 class="title-marvel">Marvel at home</h3>`,
+    `
+      ${await Card('', dataContentGridTop[0])}
+      ${await Card('', dataContentGridTop[1])}
+      ${await Card('', dataContentGridTop[2])}
+      ${await Card('', dataContentGridTop[3])}
+    `
+  );
+
+  const contentGridData = [
+    {
+      img: './assets/capvsiron.jpg',
+      title: "Go Behind the Scenes of 'Civil War'",
+      subtitle: 'Podcasts',
+    },
+    {
+      img: './assets/week-marvel.jpg',
+      title: 'This Week in Marvel Spins a Yarn with Author Preeti Chhibber',
+      subtitle: 'Podcasts',
+    },
+    {
+      img: './assets/women-marvel.jpg',
+      title:
+        'Women of Marvel On Creating An Inclusive Space With Black Girl Gamers ',
+      subtitle: 'Digital Series',
+    },
+    {
+      img: './assets/dr-doom.jpg',
+      title: "DOOM Arrives to MARVEL UNLIMITED | Marvel's Pull List",
+      subTitleLink: "Marvel's the pull list",
+      addOverlay: true,
+    },
+  ];
+
   const contentGrid = await ContentGrid(
     `<h3 class="title-marvel">Marvel PODCASTS</h3>`,
-    `${await Card()} ${await Card()} ${await Card()} ${await Card()}`
+    `
+    ${await Card('', contentGridData[0])}
+    ${await Card('', contentGridData[1])}
+    ${await Card('', contentGridData[2])}
+    ${await Card('', contentGridData[3])}
+    `
   );
 
   const newsContentBody = await NewsContentBody(
@@ -291,6 +480,10 @@ const init = async () => {
 
   content.innerHTML = `
     ${contentMain1}
+
+    <section>
+      ${contentGridTop}
+    </section>
 
     ${contentMain2}
 
