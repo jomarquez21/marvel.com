@@ -10,6 +10,117 @@ header {
   }
 }
 
+.header {
+  &__container {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    height: 100%;
+  }
+
+  &__menu {
+    display: inline-flex !important;
+    margin: 0 auto;
+
+    &:hover &-link {
+      color: #999;
+    }
+  }
+
+  &__menu-item {
+    &:hover {
+      .header__menu-link {
+        color: $white;
+        border-color: $marvel-red;
+      }
+
+      & .header__submenu {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__menu-link {
+    color: $white;
+    border-bottom: 2px solid transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__submenu {
+    background-color: $white;
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 100%;
+    z-index: 9999;
+    width: 100%;
+    display: block;
+    padding-bottom: 20px;
+    transition: visibility 0.25s ease-in-out;
+
+    &-links {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+
+      .menu__item {
+        padding: 0;
+        margin-top: 10px;
+
+        &:nth-child(n + 2) {
+          margin-left: 26px;
+        }
+      }
+    }
+
+    &-title {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 40px;
+      letter-spacing: 1px;
+      color: #151515;
+      text-align: center;
+      font-family: 'roboto condensed';
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &-content {
+      padding: 30px 15px 20px;
+      max-width: 1020px;
+      margin: 0 auto;
+    }
+
+    &-footer {
+      margin-top: 26px;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+
+      &-title {
+        margin: 0;
+        text-transform: uppercase;
+        font-family: 'roboto condensed bold';
+        color: #c6a972;
+        letter-spacing: 1px;
+        font-size: 12px;
+      }
+
+      .menu__container {
+        margin: 0;
+      }
+
+      .menu__item {
+        padding: 0;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
 .header__top {
   height: 52px;
   border-bottom: 1px solid #393939;
@@ -92,7 +203,7 @@ header {
 
 .header__bottom {
   height: 40px;
-  text-align: center;
+  position: relative;
 }
 
 .mastercard {
@@ -107,7 +218,7 @@ header {
     color: $white;
     text-decoration: none;
   }
-  
+
   &__icon {
     position: relative;
     width: 30px;
@@ -128,7 +239,7 @@ header {
   }
 
   &__description {
-    line-height: .9;
+    line-height: 0.9;
     letter-spacing: 1px;
     display: flex;
     flex-direction: column;

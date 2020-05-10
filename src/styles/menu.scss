@@ -1,0 +1,38 @@
+.menu {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    line-height: 15.6px;
+  }
+
+  &__item {
+    height: 100%;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    font-family: 'roboto condensed bold';
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1px;
+  }
+
+  &__link {
+    font-size: 12px;
+    font-family: 'roboto condensed bold';
+    line-height: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #151515;
+
+    &:hover {
+      color: $marvel-red;
+    }
+  }
+}
