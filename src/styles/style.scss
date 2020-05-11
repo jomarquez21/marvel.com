@@ -34,4 +34,8 @@ a {
   &--gray-fill {
     fill: #999;
   }
+
+  &--white-fill {
+    fill: $white;
+  }
 }
