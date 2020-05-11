@@ -26,52 +26,6 @@ const init = async () => {
     ${headerBottom}
   `;
 
-  const carouselTemp2 = `
-    <div style="display: flex; justify-content: space-between; overflow: hidden;">
-      <div style="width: 174px; margin-right: 10px">
-        ${await CardVertical()}
-      </div>
-      <div style="width: 174px; margin-right: 10px">
-        ${await CardVertical()}
-      </div>
-      <div style="width: 174px; margin-right: 10px">
-        ${await CardVertical()}
-      </div>
-      <div style="width: 174px; margin-right: 10px">
-        ${await CardVertical()}
-      </div>
-      <div style="width: 174px; margin-right: 10px">
-        ${await CardVertical()}
-      </div>
-      <div style="width: 174px; margin-right: 10px">
-        ${await CardVertical()}
-      </div>
-    </div>
-  `;
-
-  const carouselTemp3 = `
-    <div style="display: flex; justify-content: space-between; overflow: hidden;">
-      <div style="width: 192px; margin-right: 10px">
-        ${await CardCharacter()}
-      </div>
-      <div style="width: 192px; margin-right: 10px">
-        ${await CardCharacter()}
-      </div>
-      <div style="width: 192px; margin-right: 10px">
-        ${await CardCharacter()}
-      </div>
-      <div style="width: 192px; margin-right: 10px">
-        ${await CardCharacter()}
-      </div>
-      <div style="width: 192px; margin-right: 10px">
-        ${await CardCharacter()}
-      </div>
-      <div style="width: 192px; margin-right: 10px">
-        ${await CardCharacter()}
-      </div>
-    </div>
-  `;
-
   const contentMain1 = await ContentMain(
     {imageUrl: './assets/avengerscampus_mas_dsk.jpg'},
     Info.bind(

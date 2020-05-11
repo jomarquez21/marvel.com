@@ -36,6 +36,7 @@ header {
 
       & .header__submenu {
         visibility: visible;
+        opacity: 1;
       }
     }
   }
@@ -53,13 +54,16 @@ header {
     background-color: $white;
     position: absolute;
     visibility: hidden;
+    opacity: 0;
     left: 0;
     top: 100%;
     z-index: 9999;
     width: 100%;
     display: block;
     padding-bottom: 20px;
-    transition: visibility 0.25s ease-in-out;
+    transition-property: opacity, visibility;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
 
     &-links {
       margin-top: 10px;
