@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   padding: 0;
-  
+
   &__main {
     background-color: #151515;
     display: flex;
@@ -18,7 +18,7 @@
         top: 0;
         border-bottom: 560px solid #151515;
         border-right: 160px solid transparent;
-        left: 44.90%;
+        left: 44.9%;
         z-index: 1;
       }
     }
@@ -39,13 +39,27 @@
       position: relative;
       z-index: 2;
     }
-    
+
     &-img {
       width: 100%;
       background-position: 50% 0;
       background-size: cover;
       position: relative;
       height: 280px;
+
+      &--ligth {
+        &::after {
+          content: '';
+          width: 60%;
+          height: 100%;
+          position: absolute;
+          background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.65) 0,
+            transparent
+          );
+        }
+      }
 
       @media screen and (min-width: 560px) {
         height: 440px;
@@ -73,7 +87,7 @@
       }
     }
   }
-  
+
   &__carousel {
     margin: 0 auto;
     max-width: 1179px;

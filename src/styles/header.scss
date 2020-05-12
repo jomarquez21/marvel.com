@@ -6,7 +6,7 @@ header {
   text-transform: uppercase;
 
   .separator {
-    margin: 5px 10px;
+    margin: 5px;
   }
 }
 
@@ -144,6 +144,7 @@ header {
     display: flex;
     align-items: center;
     margin-right: auto;
+    line-height: 12px;
     padding: 0 25px;
     border-left: 1px solid #393939;
     border-right: 1px solid #393939;
@@ -155,8 +156,7 @@ header {
     &__logo {
       width: 20px;
       height: 20px;
-      background-color: $white;
-      color: $black;
+      letter-spacing: 1px;
       border-radius: 50%;
       text-align: center;
       margin-right: 8px;

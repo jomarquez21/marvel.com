@@ -16,6 +16,7 @@ $marvel-red-opacity: #9f0013;
 @import './footer.scss';
 @import './promo.scss';
 @import './menu.scss';
+@import './carousel-slider.scss';
 
 body {
   overflow-y: scroll;
@@ -33,5 +34,9 @@ a {
 .icon--svg {
   &--gray-fill {
     fill: #999;
+  }
+
+  &--white-fill {
+    fill: $white;
   }
 }

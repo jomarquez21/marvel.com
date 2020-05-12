@@ -1,6 +1,7 @@
 import {HeaderTop} from './components/headers/HeaderTop';
 import {HeaderBottom} from './components/headers/HeaderBottom';
 import {ContentMain} from './components/ContentMain';
+import {MainBanner} from './components/MainBanner';
 import {Info} from './components/Info';
 import {LinkMarvel} from './components/LinkMarvel';
 import {Card} from './components/cards/Card';
@@ -14,6 +15,7 @@ import {NewsContentSidebar} from './components/newsContents/NewsContentSidebar';
 import {Footer} from './components/Footer';
 import './../styles/style.scss';
 import {Promo} from './components/Promo';
+import {CarouselSlider} from './components/carouselSlider';
 
 const init = async () => {
   const header = null || document.getElementById('header');
@@ -26,18 +28,79 @@ const init = async () => {
     ${headerBottom}
   `;
 
-  const contentMain1 = await ContentMain(
-    {imageUrl: './assets/avengerscampus_mas_dsk.jpg'},
-    Info.bind(
-      null,
+  const contentMain1 = [
+    await MainBanner(
+      {imageUrl: './assets/main_01.jpg'},
+      Info.bind(
+        null,
+        {
+          urlImage: './assets/twgbc.png',
+          title: 'All things Ms. Marvel',
+          description:
+            "Paul Scheer talks to Community's Gillian Jacobs about Power Pack, Ms. Marvel and more!",
+        },
+        LinkMarvel.bind(null, 'Watch now', 'btn-marvel--fill')
+      )
+    ),
+    await MainBanner(
+      {imageUrl: './assets/main_02.jpg'},
+      Info.bind(
+        null,
+        {
+          newInfo: 'Marvel LIVE!',
+          title: 'How to Draw Black Widow',
+          description:
+            "Get an art lesson on Marvel's favorite super-spy, Natasha Romanoff, with modern legend Phil Noto!",
+        },
+        LinkMarvel.bind(null, 'Watch now', 'btn-marvel--fill')
+      )
+    ),
+    await MainBanner(
+      {imageUrl: './assets/main_03.jpg'},
+      Info.bind(
+        null,
+        {
+          urlImage: './assets/marvelunlimited_log.png',
+          title: 'Free Digital Comics',
+          description:
+            "Marvel Unlimited is now offering free access to more of Marvel's most iconic stories.",
+        },
+        LinkMarvel.bind(null, 'LEARN MORE', 'btn-marvel--fill')
+      )
+    ),
+    await MainBanner(
+      {imageUrl: './assets/main_04.jpg'},
+      Info.bind(
+        null,
+        {
+          title: 'Battle Royale: Wolverine vs. Cyclops',
+          description:
+            "The fourth round of Marvel's Battle Royale 2020 is the age old question of Wolverine or Cyclops!",
+        },
+        LinkMarvel.bind(null, 'Vote now', 'btn-marvel--fill')
+      )
+    ),
+    await MainBanner(
       {
-        urlImage: './assets/marvelunlimited_log.png',
-        description:
-          'Read these plus 27,000+ digital comics for $9.99 a month!',
+        imageUrl: './assets/main_05.jpg',
+        imageClassName: 'wrapper__main-img--ligth',
       },
-      LinkMarvel.bind(null, 'LEARN MORE', 'btn-marvel--fill')
-    )
-  );
+      Info.bind(
+        null,
+        {
+          urlImage: './assets/marvelunlimited_log.png',
+          title: '#LoveComicShops',
+          description:
+            'A few ways to support small businesses like your local comic book shop.',
+        },
+        async () =>
+          `
+          ${await LinkMarvel('COMIC SHOPS', 'btn-marvel--light')}
+          ${await LinkMarvel('SHARE THE LOVE', 'btn-marvel--light')}
+        `
+      )
+    ),
+  ];
 
   const contentCarouselTemp1 = [
     {
@@ -433,7 +496,7 @@ const init = async () => {
   const promo = await Promo();
 
   content.innerHTML = `
-    ${contentMain1}
+    ${await CarouselSlider(contentMain1)}
 
     <section>
       ${contentGridTop}

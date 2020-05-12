@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import {MainBanner} from './MainBanner';
 
 const optionParameterDefault = {
   className: '',
@@ -9,35 +9,23 @@ const wrapperInfoDefault = async () => '';
 const carouselDefault = async () => '';
 
 export const ContentMain = async (
-  {className, imageUrl, imageClassName} = optionParameterDefault,
+  params = optionParameterDefault,
   wrapperInfo = wrapperInfoDefault,
   carousel = carouselDefault
 ) => {
-  let wrapperInfoContent = await wrapperInfo();
-  let carouselContent = carousel ? await carousel() : '';
+  let wrapperInfoContent = await MainBanner(params, wrapperInfo);
+  let carouselContent = await carousel();
+
+  const carouselHtml = `
+    <div class="wrapper__carousel">
+      <div class="wrapper__carousel-inner"> ${carouselContent}</div>
+    </div>          
+    `;
 
   return `
     <section class="wrapper">
-      <div class="wrapper__main ${classNames(className)}">
-        <div class="wrapper__main-img ${classNames(
-          imageClassName
-        )}" style="background-image: url('${imageUrl}');"></div>
-
-        ${
-          wrapperInfoContent
-            ? `
-            <div class="wrapper__main-content">
-              ${wrapperInfoContent}
-            </div>
-          `
-            : ''
-        }
-      </div>
-      <div class="wrapper__carousel">
-        <div class="wrapper__carousel-inner">
-          ${carouselContent}
-        </div>
-      </div>
+      ${wrapperInfoContent}
+      ${carouselContent ? carouselHtml : ''}
     </section>
   `;
 };
