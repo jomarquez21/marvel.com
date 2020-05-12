@@ -1,23 +1,34 @@
-export const Info = async ({urlImage, newInfo, title, description}, children) => {
+export const Info = async (
+  {urlImage, newInfo, title, description},
+  children
+) => {
   const childrenContent = await children();
 
   return `
     <div class="info">
       ${
-        urlImage ? `
+        urlImage
+          ? `
           <figure class="info__img">
             <img src="${urlImage}" alt="info_logo" />
           </figure>
-        ` : ''
+        `
+          : ''
       }
 
-      ${newInfo ? `<div class="info__new"><div class="title-marvel">${newInfo}</div></div>` : ''}
+      ${
+        newInfo
+          ? `<div class="info__new"><div class="title-marvel">${newInfo}</div></div>`
+          : ''
+      }
 
       ${title ? `<p class="info__title">${title}</p>` : ''}
 
-      ${description ? `<div class="info__description">${description}</div>` : ''}
+      ${
+        description ? `<div class="info__description">${description}</div>` : ''
+      }
 
       ${childrenContent}
     </div>
   `;
-}
+};
